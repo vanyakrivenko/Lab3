@@ -10,6 +10,18 @@ class GameWindow(QMainWindow):
     self.initUI()
 
   def initUI(self):
+    menu_bar = QMenuBar(self)  # Highlighted code: Menu bar creation
+    self.setMenuBar(menu_bar)
+
+    file_menu = menu_bar.addMenu("File")  # Highlighted code: File menu
+
+    reset_action = QAction("Reset", self)  # Highlighted code: Reset action
+    reset_action.triggered.connect(self.reset_game)
+    file_menu.addAction(reset_action)
+
+    exit_action = QAction("Exit", self)  # Highlighted code: Exit action
+    exit_action.triggered.connect(self.close)
+    file_menu.addAction(exit_action)
     self.central_widget = QWidget()
     self.setCentralWidget(self.central_widget)
     
