@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QMainWindow, QPushButton, QGridLayout, QWidget, QM
 class GameWindow(QMainWindow):
   def __init__(self):
     super().__init__()
-    self.WindowTitle("X-0")
+    self.setWindowTitle("X-0")
     self.setGeometry(100, 100, 400, 400)
     self.current_player = "X"
     self.board = [[None for _ in range(3)] for _ in range(3)]
